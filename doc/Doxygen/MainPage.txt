@@ -1,0 +1,56 @@
+/*!
+    \defgroup _GROUP_PLUGIN_CORE_ The basic section of core component.
+    \defgroup _GROUP_PLUGIN_CORE2_ The others of core component.
+    \defgroup _GROUP_PLUGIN_LOG_ Logging output.
+    \defgroup _GROUP_CHANGE_OBSERVER_ Event observer.
+    \defgroup _GROUP_UTILFUNC Some frequently-used functions.
+    \defgroup _GROUP_UTILITY_ Some frequently-used utilities.
+    \defgroup _GROUP_PLUGIN_XML_ XML interfaces.
+    \defgroup _GROUP_APPUI_ Application's UI.
+*/
+
+/*! \mainpage X3 C++ PluginFramework Interface Reference
+
+    \section sectinoIntro Summary
+
+    x3c is a plugin-framework using C++ and STL, not using MFC/ATL/COM. \n
+    It has many frequently-used and lightweight plugins (raw dll). \n
+    We can use it to develop more plugins and applications easily on Windows and Linux.
+
+    x3c is compatible for the following compilers:
+        - Win x86/x64, VC++ 6.0, 8.0(2005), 9.0(2008), or 10.0 (2010).
+        - Win MinGW GCC + Code::Blocks (IDE).
+        - Linux x86/x64, GCC (Code::Blocks or Makefile).
+        - Mac OS X GCC (Makefile).
+
+    This framework is licensed under the Apache Public License 2.0.\n
+    Bug reports and suggestions are welcome.
+    Email to the current maintainers may be sent to <rhcad@hotmail.com>.\n
+    Some documents in chinese may be found at http://www.cnblogs.com/rhcad .
+
+    X3 C++ PluginFramework includes the following sections:
+
+    - \ref _GROUP_PLUGIN_CORE_ "The basic section." \n
+        The basic interfaces and macros for developing plugins.\n
+        It's a core section of the framework.\n\n
+
+    - \ref _GROUP_PLUGIN_LOG_ "Logging output." \n
+        Logging output macros and interfaces.\n
+        They are usually used to implement plugins.\n\n
+
+    - \ref _GROUP_CHANGE_OBSERVER_ "Event observer." \n
+        Change observer classes for event-driven programming.\n\n
+
+    - \ref _GROUP_UTILFUNC "Frequently-used functions." \n
+        Some frequently-used functions for developing plugins.\n\n
+
+    - \ref _GROUP_UTILITY_ "Frequently-used utilities." \n
+        Some frequently-used utility interfaces for developing plugins.\n\n
+
+    - \ref _GROUP_PLUGIN_XML_ "XML interfaces." \n
+        The interfaces for data I/O and data object management.\n
+        There is a plugin implemented using MSXML or TinyXML DOM Parser.\n\n
+
+    - \ref _GROUP_APPUI_ "Application's UI." \n
+        Some frequently-used interfaces for UI window.\n\n
+*/

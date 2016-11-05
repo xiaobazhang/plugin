@@ -1,0 +1,4 @@
+<hr size="1"><address>
+X3 C++ PluginFramework, Author: <a href="mailto://rhcad@hotmail.com">Zhang Yungui</a>, Website: <a href="http://github.com/rhcad/x3c">http://github.com/rhcad/x3c</a>
+</address>
+</body></html>

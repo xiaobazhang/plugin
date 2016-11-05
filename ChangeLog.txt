@@ -1,0 +1,348 @@
+x3c - C++ Plugin Framework
+
+2011-11-08
+
+    * Add GetLogObserver() export function in LogWriter.plugin
+    * Auto call x3UninitializePlugin() when a plugin is unloading.
+    * LogWriter.plugin: Can work regardless no PluginManager, FileUtility or TextUtility plugins.
+    * LogHelper.h: Add X3LOG_GROUP(name) and X3LOG_GROUP2(name, extra).
+    * Add LogHelper2.h for non-plugin projects.
+
+2011-11-01
+
+    * Add HookManager plugin and test case.
+
+2011-10-28
+
+    * Support '0x' prefix in CXmlUtil::GetAttributeInt() [ConfigXml.plugin].
+    * Add NotifyCmdMsgEvent(). Add a param of 'test' in RawCmdMsgObserver.
+
+------v1.1.4------
+
+2011-10-24
+
+    * Remove dependency of VC++ projects.
+    * Auto copy files when building projects (HelloFrame and TestPlatform).
+
+2011-10-18
+
+    * Fix constructors of Cx_ConfigSection.
+    * PluginManager\DelayLoad.cpp: change default file name of class cache as "<exepath>\config\<appname>.clsbuf".
+    * Add GetTranslationsPath() in Ix_AppWorkPath.
+
+2011-10-09
+
+    * Add a python script 'tools/makeplugin.py'.
+    * Replace 'Hollow' as 'Hello'.
+    * Optimize Ix_CreateWnd and Cx_CreateWnd.
+
+2011-09-28
+
+    * PluginManager: Load a plugin only in the main thread.
+    * Add the prefix of 'x3' to the portability functions in x3win.h
+
+2011-08-26
+
+    * Compile x3c on Mac OS X 10.6 using Code::Blocks IDE and XCode GCC.
+    * Add log4cplus-1.0.4 source files and cppunit-1.12.1 header files.
+
+2011-08-18
+
+    * Compile x3c on WIN64 platform(Win2008 x64, VC++ 2008 x64).
+
+2011-08-09
+
+    * Rename folders as lowercase.
+    * Auto copy files after building VC++ unit-test projects.
+
+------v1.1.3------
+
+2011-08-03
+
+    * Change function name of Ix_Object.
+    * Change plugin version to 1.1.3.0.
+    
+    * Fix Ix_ConfigData and Cx_ConfigSection: Cx_Ptr GetSection(...)
+
+2011-07-21
+
+    * Add Ix_StringCoding (about MD5 and Base64) in TextUtility plugin.
+
+2011-07-18
+
+    * Add parameter 'enableDelayLoading' in Ix_PluginLoader.
+    * Enable multiple hosts of plugin manager in PluginManager.h
+    * Add Cx_ConfigTransaction(Ix_ConfigData* p).
+    * Enable COM plugin to load other plugins.
+
+2011-07-14
+
+    * Add 'x3core' ATLCOM project.
+    * The default path of GetAppWorkPath() is %LocalAppData% on Vista
+      and later, otherwise is the executable file's folder.
+
+------v1.1.2------
+
+2011-07-10
+
+    * Add UtilFunc/LoadDllHelper.h
+    * Add ComHook plugin and TestPlatform to hook CoCreateInstance on Windows.
+    * COM plugin is marked as delay-loading plugin.
+    * Include winver.h in *.rc
+
+2011-07-08
+
+    * Refact and optimize delay-loading code in PluginManager.
+      Call AddObserverPlugin() only when plugin is loading.
+    * Move interface file to Interface\ObserverExample in ChangeObserverExample.
+    * Add a test case for observer delay-load feature.
+    * Add class cache UML diagram.
+
+------v1.1.1------
+
+2011-07-05
+
+    * Add UML diagram.
+    * Remove 'ASSERT(0 == nul)' in XComPtr.h
+    * Add notes in Ix_PluginLoader.h and XModuleImpl.h
+
+2011-07-04
+
+    * Add GetLocalAppDataPath() using SHGetKnownFolderPath for Vista, Win7 and Win2008.
+    * Move delay-load implement code into DelayLoad.cpp
+
+2011-07-01
+
+    * Support delay-load feature for logging observer plugins.
+
+------v1.1.0------
+
+2011-06-30
+
+    * Remove RTTI (not use dynamic_cast).
+    * Add XClassMacro.h
+    * Remove FileUtility/Plugin.cpp
+    * Add namespace for GetAppWorkPath().
+
+------v1.0.11------
+
+2011-06-27
+
+    * Change vector to list in StringTable, ChangeManager and PluginManager.
+    * Add x3::has_value() in vecfunc.h.
+
+2011-06-21
+
+    * Remove IsDelayPlugin(), so all plugins will be delay loaded.
+    * Refact in Cx_PluginManager.
+    * Avoid some callings between plugins when loading plugins.
+    * Call DestroyWnd() in CEmbedWnd::~CEmbedWnd().
+    * Fix copy construction of Cx_Interface and Cx_ConfigSection for vc60.
+    * Returns true if a plugin has already loaded before in Cx_PluginLoader::LoadPluginOrDelay().
+
+2011-06-19
+
+    * Add '-shared' to C_FLAGS only for plugins (lib*.so, except *.app).
+    * Add 'static const' keyword to class id definition.
+
+    * Include PluginManager.h in XComCreator.h, so x3GetObjectFactory can use the exist handle of PluginManager.
+    * Add '-fPIC' to C_FLAGS_SO in config.mk
+
+2011-06-17
+
+    * Remove Ix_ObjectFactory::HasCreatorReplaced, SpecialInterfaceObject.
+    * Remove iidSpecial field in X3CLASSENTRY.
+
+------v1.0.10------
+
+2011-06-16
+
+    * Add x3 namespace in revision 159.
+    * Change interfaces to classes.
+
+2011-06-15
+
+    * Write error code for LoadLibraryExW in PluginManager.
+    * Add notes for including XComCreator.h
+    * Fix *.vcproj
+    * Add 'IDS_CHANGE_FAIL' in ConfigXml plugin.
+
+------v1.0.9------
+
+2011-06-02, Li Jian (Aaron) <mcuit@hotmail.com>, Zhang Yungui
+
+    * Add makefile for Linux.
+
+2011-05-26
+
+    * Add example projects: HelloView and HelloViewApp.
+    * Fix Cx_PluginLoader::LoadPluginFiles.
+
+2011-05-24
+
+    * Disable copy operators. Replace std::w2a to x3::w2a.
+    * Implement configxml plugin using tinyxml (not completed).
+    * Change portability functions for Linux and Windows.
+    * Not call InterlockedCompareExchange in Cx_SingletonObject.
+
+2011-05-18
+
+    * Implement portability for Linux.
+    * tags/x3c-1.0.8-beforelinux: Ready to implement portability.
+    * Move VC++ project files to 'projects\msvc'.
+    * Change CodeBlocks projects to Linux. Add portimpl.h and linuximpl.h
+
+2011-05-12
+
+    * ConfigXml: Output error info when saving file.
+
+2011-04-29
+
+    * FileUtility: Using CopyFileW for coping small file on Win7 instead of calling SHFileOperationW.
+    * LogWriter: Not call CopyLogFilesToServer() when error occurred by default.
+    * Add a test case for Ix_FileUtility.
+
+------v1.0.8------
+
+2011-02-28
+
+    * FileUtility: Add FOF_SILENT flag for SHFileOperationW.
+    * LogManager: Avoid reenter in WriteLog.
+    * LogWriter: Hide progress UI in CopyLogFilesToServer.
+    * LogHelper.h: Rename the variable 'buf' to '_buf'.
+
+2011-02-24
+
+    * Set modified flag only if actually changed in Cx_XmlSection::SetXXX().
+    * Check NULL string in Cx_ConfigXml::GetSection().
+
+    * LogWriter: Copy log files to server if error message has fired.
+
+2011-02-21
+
+    * Replace "\n" to "\\n " in LogWriter plugin. Add replace function in ctrim.h
+
+------v1.0.7------
+
+2011-02-18
+
+    * Add delay-load comments.
+    * Fix Cx_PluginLoader::LoadPluginOrDelay.
+    * Not call CoUninitialize if another plugin (eg. StringTable) is using ConfigXml plugin.
+
+2011-02-16
+
+    * Fix PluginManager:
+        Avoid plugin loading when a plugin is unloading.
+        Counting even a plugin is not loaded in InitializePlugins.
+        Not call ReleaseModule if a plugin is not loaded in UnloadPlugins.
+        Force load ConfigXml plugin if the class file is about to loaded.
+
+------v1.0.6------
+
+2011-02-14
+
+    * Compile and fix projects using MinGW and GCC 4.5.1.
+    * Add Code::Blocks 10.05 projects (converted from x3_vc60).
+    * Support MFC dialog application and console application in cppunit test applications.
+    * Rename MSXML DOM namespace in ConfigXml plugin.
+
+    * PluginManager 1.0.0.5:
+    * PluginManager\Cx_PluginLoader.cpp: Ignore folders in GetPluginIndex. Rewrite LoadPlugin().
+
+    * Add L before the wide character like L'.'
+
+------v1.0.5------
+
+2011-02-08
+
+    * PluginManager: Implement Ix_PluginDelayLoad to support delay-load feature for observer plugins.
+    * Cx_ChangeObserver: Support delay-load feature for observer plugins.
+
+2011-02-07
+
+    * PluginManager: Implement the delay-loaded feature. Add Ix_AppWorkPath.
+    * LogWriter: Using Ix_AppWorkPath to get logging path.
+
+2011-02-04
+
+    * PluginManager: Support absolute path in LoadPlugins().
+        Unload plugin if fail to call InitializePlugins().
+        Add filename in MODULEINFO. Add module index in class map.
+        Don't remove element in ReleaseModule().
+
+------v1.0.4------
+
+2011-01-18
+
+    * ConfigXml: Delay call CoUninitialize until plugin is unloading.
+
+2011-01-15
+
+    * Remove cppunit 1.12.1 include files.
+    * Replace StrCpyNW to wcscpy_s (because for VC6 shell32.dll no StrCpyNW entry point in Win7).
+    * Simplify license note in *.h and *.cpp.
+
+    * PluginManager\PluginManager.h: add TextUtility.plugin.dll in LoadCorePlugins().
+
+    * TextUtility v1.0.0.2:
+    * TextUtility\Cx_TextUtil.cpp: IsSpaceChar() support '\r' and '\n'.
+
+2011-01-13
+
+    * Move Ix_UIConfig.h to pkg_AppUI. Fix doxyfile files.
+
+    * ConfigXml v1.0.0.3:
+    * ConfigXml\Cx_XmlSection.cpp: fix default return value of Cx_XmlSection::Setxxx.
+
+------v1.0.3------
+
+2011-01-12, Zhang Yungui <rhcad@hotmail.com>
+
+    * Rename text files(add .txt).
+    * Replace tab char to space char in *.h and *.cpp.
+    * Replace LPWSTR to wchar*
+    * Move FileUtility/TextUtility/LogWriter/ to pkg_Core, Move Ix_ConfigDBFactory.h to Interface\Database\.
+
+    * ConfigDB v1.0.0.2:
+    * pkg_Utility\Modules\ConfigDB\Cx_ConfigFactory.cpp: Remove Ix_FileUtility.
+        Open access connection readonly if file is readonly.
+    * pkg_Utility\Interface\Database\Ix_ConfigDBFactory.h:
+    * pkg_Utility\Modules\ConfigDB\Cx_CfgDatabase.h:
+    * pkg_Utility\Modules\ConfigDB\Cx_CfgDatabase.cpp: Add readonly param in OpenConnection()
+
+2011-01-09, Zhang Yungui <rhcad@hotmail.com>
+
+    * ConfigXml v1.0.0.2:
+    * ConfigXml\ConfigXmlImpl.h:
+        automatic call CoInitializeEx to avoid caller forget it.
+    * ConfigXml\XmlUtil\XmlUtil.cpp: support MSXML6 and MSXML4.
+    * add InitXMLDLL.h for applications to Ensure MSXML correctly initialized.
+
+------v1.0.2------
+
+2011-01-06, Zhang Yungui <rhcad@hotmail.com>
+
+    * Move VC++ workspace files (x3_vc*.sln) to 'projects' folder.
+    * Release vesion 1.0.2 (tags/x3-1.0.2)
+
+2011-01-06, Huang Ye <think.hy@gmail.com>
+
+    * Add a tool in 'tools\MakePluginPerl'.
+    It's a tool writing in perl for auto-generating plugin project.
+
+2011-01-05, Zhang Yungui <rhcad@hotmail.com>
+
+    * ChangeManager v1.0.0.2:
+    * ChangeManager\Cx_ChangeManager.h and cpp:
+    change std::multimap to std::hash_multimap, remove my hash function.
+
+    * PluginManager v1.0.0.2:
+    * PluginManager\Cx_ObjectFactory.h and cpp:
+        change class-table from std::map to std::hash_map. add 'Tao Jian Lin' to author list.
+
+    * doc\Doxygen\Interface.doxyfile: change include files to relative paths.
+
+2011-01-04, Zhang Yungui <rhcad@hotmail.com>
+
+    * First release (x3_r01).
